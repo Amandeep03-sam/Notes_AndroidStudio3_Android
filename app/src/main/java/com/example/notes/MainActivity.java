@@ -297,48 +297,40 @@ public class MainActivity extends AppCompatActivity {
         Button cancel= dialogView.findViewById(R.id.cancel_btn);
 
 
-//
-//
-//        rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
-//                if (checkedId == R.id.title_rb) {
-//
-//                    Collections.sort(notesList, new Comparator<Note>() {
-//                        @Override
-//                        public int compare(Note note, Note t1) {
-//                            return note.getTitle().compareTo(t1.getTitle());
-//                        }
-//
-//
-//
-//
-//
-//                    });
-//                    mAdapter.notifyDataSetChanged();
-//                    SORT_VALUE=1;
-//
-//                    dialog.dismiss();
-//                } else {
-//
-//                    SORT_VALUE=0;
-//                    finish();
-//                    startActivity(getIntent());
-//                    dialog.dismiss();
-//                }
-//
-//            }
-//        });
-//
-//        cancel.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//               dialog.dismiss();
-//            }
-//        });
-//
-//        dialog.show();
+
+
+        rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
+                if (checkedId == R.id.title_rb) {
+
+                    Collections.sort(notesList, new Comparator<Note>() {
+                        @Override
+                        public int compare(Note note, Note t1) {
+                            return note.getTitle().compareTo(t1.getTitle());
+                        }
+
+
+
+
+
+                    });
+                    mAdapter.notifyDataSetChanged();
+                    SORT_VALUE=1;
+
+                    dialog.dismiss();
+                } else {
+
+                    SORT_VALUE=0;
+                    finish();
+                    startActivity(getIntent());
+                    dialog.dismiss();
+                }
+
+            }
+        });
+
+
     }
 
     @Override
