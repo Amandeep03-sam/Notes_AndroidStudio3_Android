@@ -81,6 +81,8 @@ public class MarkerActivity extends FragmentActivity implements OnMapReadyCallba
                 Log.d("System out", "onMarkerDragStart..." + arg0.getPosition().latitude + "..." + arg0.getPosition().longitude);
             }
 
+
+
             @Override
             public void onMarkerDragEnd(Marker arg0) {
                 // TODO Auto-generated method stub
