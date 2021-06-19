@@ -8,9 +8,16 @@
         android:layout_margin="20dp"
         android:orientation="vertical">
         <TextView
+<<<<<<< HEAD
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/sort_your_notes"
+=======
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sort your Notes"
+>>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
             android:textColor="@color/teal_200"
             android:textStyle="bold"
             android:textSize="16sp"
@@ -28,7 +35,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_10"
+<<<<<<< HEAD
             android:text="@string/sort_by_title"
+=======
+            android:text="Sort by Title"
+>>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
             android:textColor="@color/teal_200"
             />
             <RadioButton
@@ -36,7 +47,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_10"
+<<<<<<< HEAD
             android:text="@string/sort_by_date_time"
+=======
+            android:text="Sort by Date/Time"
+>>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
             android:textColor="@color/teal_200"
             />
 
@@ -52,6 +67,7 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/cancel_btn"
+<<<<<<< HEAD
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/cancel"
@@ -59,6 +75,15 @@
                 android:textColor="@color/white"
                 android:background="@android:color/holo_red_light"
                 android:layout_marginEnd="@dimen/dimen_10"
+=======
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:background="@android:color/holo_red_light"
+                android:layout_marginRight="@dimen/dimen_10"
+>>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
                 android:textAllCaps="false"
                 android:textSize="14sp"
                 />

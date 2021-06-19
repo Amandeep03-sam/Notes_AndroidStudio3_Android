@@ -31,8 +31,12 @@
         android:layout_gravity="bottom|end"
         android:backgroundTint="@color/white"
         android:layout_margin="@dimen/fab_margin"
+<<<<<<< HEAD
         app:srcCompat="@drawable/ic_add_white"
         android:contentDescription="@string/todo" />
+=======
+        app:srcCompat="@drawable/ic_add_white" />
+>>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
 
     <!--<com.getbase.floatingactionbutton.FloatingActionsMenu
         android:id="@+id/right_labels"

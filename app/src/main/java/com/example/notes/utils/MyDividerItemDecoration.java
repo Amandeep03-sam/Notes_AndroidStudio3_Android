@@ -21,10 +21,17 @@ public class MyDividerItemDecoration extends RecyclerView.ItemDecoration {
     public static final int HORIZONTAL_LIST = LinearLayoutManager.HORIZONTAL;
     public static final int VERTICAL_LIST = LinearLayoutManager.VERTICAL;
 
+<<<<<<< HEAD
     private final Drawable mDivider;
     private int mOrientation;
     private final Context context;
     private final int margin;
+=======
+    private Drawable mDivider;
+    private int mOrientation;
+    private Context context;
+    private int margin;
+>>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
 
     public MyDividerItemDecoration(Context context, int orientation, int margin) {
         this.context = context;
