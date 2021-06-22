@@ -7,12 +7,8 @@
     android:paddingBottom="@dimen/dimen_10"
     android:paddingLeft="@dimen/activity_margin"
     android:paddingRight="@dimen/activity_margin"
-<<<<<<< HEAD
     android:paddingTop="@dimen/dimen_10"
     android:focusable="true">
-=======
-    android:paddingTop="@dimen/dimen_10">
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
 
     <TextView
         android:id="@+id/dot"
@@ -68,11 +64,7 @@
         android:adjustViewBounds="true"
         android:visibility="gone"
         android:layout_below="@+id/text_type_layout"
-<<<<<<< HEAD
         android:contentDescription="@string/todo" />
-=======
-        />
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
     
 
 

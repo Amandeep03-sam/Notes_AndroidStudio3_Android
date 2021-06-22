@@ -14,10 +14,7 @@ public class Note implements Serializable {
     public static final String COLUMN_IMAGE = "image";
     public static final String COLUMN_LATITUDE = "latitude";
     public static final String COLUMN_LONGITUDE = "longitude";
-<<<<<<< HEAD
     public static final String COLUMN_AUDIO = "audio";
-=======
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
 
     private Integer id;
     private String title;
@@ -25,11 +22,7 @@ public class Note implements Serializable {
     private String description;
     private String category;
     private String type;
-<<<<<<< HEAD
     private String image, audio;
-=======
-    private String image;
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
     private String latitude,longitude;
 
 
@@ -42,16 +35,10 @@ public class Note implements Serializable {
                     + COLUMN_CATEGORY + " TEXT,"
                     + COLUMN_TYPE + " TEXT,"
                     + COLUMN_TIMESTAMP + " DATETIME DEFAULT CURRENT_TIMESTAMP,"
-<<<<<<< HEAD
                     + COLUMN_IMAGE + " TEXT,"
                     + COLUMN_LATITUDE + " TEXT,"
                     + COLUMN_LONGITUDE + " TEXT,"
                     + COLUMN_AUDIO + " TEXT"
-=======
-                    + COLUMN_IMAGE + " BLOB,"
-                    + COLUMN_LATITUDE + " TEXT,"
-                    + COLUMN_LONGITUDE + " TEXT"
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
                     + ")";
 
 /*    CREATE TABLE " + DB_TABLE + "("+
@@ -61,12 +48,8 @@ public class Note implements Serializable {
     public Note() {
     }
 
-<<<<<<< HEAD
     public Note(Integer id, String title, String description, String category, String type, String timestamp, String image,String latitude,String longitude, String audio
     ) {
-=======
-    public Note(Integer id, String title, String description, String category, String type, String timestamp, String image,String latitude,String longitude) {
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
         this.id = id;
         this.title = title;
         this.description = description;
@@ -76,11 +59,7 @@ public class Note implements Serializable {
         this.image = image;
         this.latitude=latitude;
         this.longitude=longitude;
-<<<<<<< HEAD
         this.audio = audio;
-=======
-
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
     }
 
 
@@ -171,7 +150,6 @@ public class Note implements Serializable {
     public void setLongitude(String longitude) {
         this.longitude = longitude;
     }
-<<<<<<< HEAD
 
     public String getAudio() {
         return audio;
@@ -182,6 +160,3 @@ public class Note implements Serializable {
     }
 }
 
-=======
-}
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714

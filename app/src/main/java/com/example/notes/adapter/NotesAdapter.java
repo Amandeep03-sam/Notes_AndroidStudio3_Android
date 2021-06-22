@@ -23,7 +23,6 @@ import java.util.List;
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder> {
 
-<<<<<<< HEAD
     private final List<Note> notesList;
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
@@ -34,19 +33,6 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
         final ImageView imageView;
 
         public final LinearLayout text_type_layout;
-=======
-    private Context context;
-    private List<Note> notesList;
-
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView note;
-        public TextView dot;
-        public TextView timestamp;
-        public TextView desc;
-        ImageView imageView;
-
-        public LinearLayout text_type_layout;
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
 
         public MyViewHolder(View view) {
             super(view);
@@ -61,10 +47,6 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
 
 
     public NotesAdapter(Context context, List<Note> notesList) {
-<<<<<<< HEAD
-=======
-        this.context = context;
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
         this.notesList = notesList;
     }
 
@@ -117,11 +99,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
             SimpleDateFormat fmtOut = new SimpleDateFormat("MMM d , yyyy");
             return fmtOut.format(date);
         } catch (ParseException e) {
-<<<<<<< HEAD
             e.printStackTrace();
-=======
-
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
         }
 
         return "";

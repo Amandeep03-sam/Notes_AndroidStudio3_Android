@@ -8,10 +8,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-<<<<<<< HEAD
 import androidx.loader.content.CursorLoader;
-=======
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,10 +17,6 @@ import android.Manifest;
 import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Context;
-<<<<<<< HEAD
-=======
-import android.content.DialogInterface;
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -61,10 +54,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
-<<<<<<< HEAD
-=======
-import java.util.Comparator;
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
 import java.util.List;
 
 import android.graphics.Bitmap;
@@ -72,12 +61,7 @@ import android.graphics.BitmapFactory;
 
 public class MainActivity extends AppCompatActivity  {
      NotesAdapter mAdapter;
-<<<<<<< HEAD
     private final List<Note> notesList = new ArrayList<>();
-=======
-    private List<Note> notesList = new ArrayList<>();
-    private CoordinatorLayout coordinatorLayout;
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
     private RecyclerView recyclerView;
     private TextView noNotesView;
 
@@ -85,24 +69,15 @@ public class MainActivity extends AppCompatActivity  {
 
     private static int SORT_VALUE=0;
     private final int IMAGE_REQ_CODE = 101;
-<<<<<<< HEAD
     private final int AUDIO_REQ_CODE = 102;
-=======
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
     private final int GALLERY_IMAGE_REQ_CODE = 102;
     private final int CAMERA_IMAGE_REQ_CODE = 103;
 
     public static String NOTE_TYPE="text";
     public static String IMAGE_FILE_PATH=null;
-<<<<<<< HEAD
     public static String AUDIO_FILE_PATH=null;
     public ImageView imageView;
     public TextView audioAttached;
-=======
-
-    public ImageView imageView;
-
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
     private static final int REQUEST_LOCATION = 1;
     LocationManager locationManager;
     String latitude, longitude;
@@ -114,11 +89,7 @@ public class MainActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-<<<<<<< HEAD
         Toolbar toolbar = findViewById(R.id.toolbar);
-=======
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
         setSupportActionBar(toolbar);
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
@@ -129,11 +100,7 @@ public class MainActivity extends AppCompatActivity  {
         ActivityCompat.requestPermissions( this,
                 new String[] {Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
 
-<<<<<<< HEAD
         CoordinatorLayout coordinatorLayout = findViewById(R.id.coordinator_layout);
-=======
-        coordinatorLayout = findViewById(R.id.coordinator_layout);
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
         recyclerView = findViewById(R.id.recycler_view);
         noNotesView = findViewById(R.id.empty_notes_view);
 
@@ -142,7 +109,6 @@ public class MainActivity extends AppCompatActivity  {
         notesList.addAll(db.getAllNotes());
 
          FloatingActionButton fab =  findViewById(R.id.fab);
-<<<<<<< HEAD
          fab.setOnClickListener(view -> {
              NOTE_TYPE="text";
 
@@ -153,21 +119,6 @@ public class MainActivity extends AppCompatActivity  {
              }
 
          });
-=======
-         fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NOTE_TYPE="text";
-
-                if (checkPermissionREAD_EXTERNAL_STORAGE(MainActivity.this)) {
-                    // do your stuff..
-
-                    showNoteDialog(false, null, -1);
-                }
-
-            }
-        });
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
 
 
 
@@ -234,21 +185,7 @@ public class MainActivity extends AppCompatActivity  {
     /////////////////Location////////////////
     private void OnGPS() {
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-<<<<<<< HEAD
         builder.setMessage("Enable GPS").setCancelable(false).setPositiveButton("Yes", (dialog, which) -> startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS))).setNegativeButton("No", (dialog, which) -> dialog.cancel());
-=======
-        builder.setMessage("Enable GPS").setCancelable(false).setPositiveButton("Yes", new  DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
-            }
-        }).setNegativeButton("No", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-            }
-        });
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
         final AlertDialog alertDialog = builder.create();
         alertDialog.show();
     }
@@ -317,19 +254,9 @@ public class MainActivity extends AppCompatActivity  {
         alertBuilder.setTitle("Permission necessary");
         alertBuilder.setMessage(msg + " permission is necessary");
         alertBuilder.setPositiveButton(android.R.string.yes,
-<<<<<<< HEAD
                 (dialog, which) -> ActivityCompat.requestPermissions((Activity) context,
                         new String[] { permission },
                         MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE));
-=======
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        ActivityCompat.requestPermissions((Activity) context,
-                                new String[] { permission },
-                                MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE);
-                    }
-                });
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
         AlertDialog alert = alertBuilder.create();
         alert.show();
     }
@@ -337,7 +264,6 @@ public class MainActivity extends AppCompatActivity  {
     @Override
     public void onRequestPermissionsResult(int requestCode,
                                            String[] permissions, int[] grantResults) {
-<<<<<<< HEAD
         if (requestCode == MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 getLocation();
@@ -348,20 +274,6 @@ public class MainActivity extends AppCompatActivity  {
         } else {
             super.onRequestPermissionsResult(requestCode, permissions,
                     grantResults);
-=======
-        switch (requestCode) {
-            case MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE:
-                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    getLocation();
-                } else {
-                    Toast.makeText(MainActivity.this, "GET_ACCOUNTS Denied",
-                            Toast.LENGTH_SHORT).show();
-                }
-                break;
-            default:
-                super.onRequestPermissionsResult(requestCode, permissions,
-                        grantResults);
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
         }
     }
     ////
@@ -371,11 +283,7 @@ public class MainActivity extends AppCompatActivity  {
     private void createNote(String title,String desc,String category) {
         // inserting note in db and getting
         // newly inserted note id
-<<<<<<< HEAD
         long id = db.insertNote(title,desc,category,latitude,longitude, AUDIO_FILE_PATH);
-=======
-        long id = db.insertNote(title,desc,category,latitude,longitude);
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
 
         // get the newly inserted note from db
         Note n = db.getNote(id);
@@ -420,7 +328,6 @@ public class MainActivity extends AppCompatActivity  {
 
 
     private void showActionsDialog(final int position) {
-<<<<<<< HEAD
         CharSequence[] colors = new CharSequence[]{"Edit", "Delete"};
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -433,29 +340,11 @@ public class MainActivity extends AppCompatActivity  {
                     deleteNote(position);
                 }
 
-=======
-        CharSequence colors[] = new CharSequence[]{"Edit", "Delete"};
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Choose option");
-        builder.setItems(colors, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-                    if (which == 0) {
-                        showNoteDialog(true, notesList.get(position), position);
-                    } else {
-                        deleteNote(position);
-                    }
-
-            }
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
         });
         builder.show();
     }
 
     private void showActionsDialogForOtherType(final int position) {
-<<<<<<< HEAD
         CharSequence[] colors = new CharSequence[]{"Delete"};
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -468,23 +357,6 @@ public class MainActivity extends AppCompatActivity  {
                     deleteNote(position);
                 }
 
-=======
-        CharSequence colors[] = new CharSequence[]{"Delete"};
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Choose option");
-        builder.setItems(colors, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-
-                    if (which == 0) {
-
-                        deleteNote(position);
-                    }
-
-            }
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
         });
         builder.show();
     }
@@ -500,27 +372,19 @@ public class MainActivity extends AppCompatActivity  {
         final EditText desc_et = view.findViewById(R.id.desc_et);
         final EditText category_et = view.findViewById(R.id.category_et);
          imageView = view.findViewById(R.id.imageView);
-<<<<<<< HEAD
         audioAttached = view.findViewById(R.id.textView2);
-=======
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
         TextView dialogTitle = view.findViewById(R.id.dialog_title);
         dialogTitle.setText(!shouldUpdate ? getString(R.string.lbl_new_note_title) : getString(R.string.lbl_edit_note_title));
 
         final Button camera = view.findViewById(R.id.camera_btn);
         final Button audio = view.findViewById(R.id.audio_btn);
-<<<<<<< HEAD
         AUDIO_FILE_PATH = null;
-=======
-
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
         //If Update Notes
         if (shouldUpdate)
         {
             camera.setVisibility(View.GONE);
             audio.setVisibility(View.GONE);
         }
-<<<<<<< HEAD
         camera.setOnClickListener(view12 -> {
             imageChooser();
             //new GligarPicker().requestCode(IMAGE_REQ_CODE).limit(1).withActivity(MainActivity.this).show();
@@ -529,17 +393,6 @@ public class MainActivity extends AppCompatActivity  {
 
         audio.setOnClickListener(view1 -> audioChooser());
 
-=======
-        camera.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                imageChooser();
-                //new GligarPicker().requestCode(IMAGE_REQ_CODE).limit(1).withActivity(MainActivity.this).show();
-
-            }
-        });
-
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
 
         if (shouldUpdate && note != null) {
             title_et.setText(note.getTitle());
@@ -548,30 +401,15 @@ public class MainActivity extends AppCompatActivity  {
         }
         alertDialogBuilderUserInput
                 .setCancelable(false)
-<<<<<<< HEAD
                 .setPositiveButton(shouldUpdate ? "update" : "save", (dialogBox, id) -> {
 
                 })
                 .setNegativeButton("cancel",
                         (dialogBox, id) -> dialogBox.cancel());
-=======
-                .setPositiveButton(shouldUpdate ? "update" : "save", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialogBox, int id) {
-
-                    }
-                })
-                .setNegativeButton("cancel",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialogBox, int id) {
-                                dialogBox.cancel();
-                            }
-                        });
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
 
         final AlertDialog alertDialog = alertDialogBuilderUserInput.create();
         alertDialog.show();
 
-<<<<<<< HEAD
         alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(v -> {
             // Show toast message when no text is entered
             if (TextUtils.isEmpty(title_et.getText().toString())) {
@@ -602,41 +440,6 @@ public class MainActivity extends AppCompatActivity  {
 
                     createImageNote(title_et.getText().toString(),desc_et.getText().toString(),category_et.getText().toString(),IMAGE_FILE_PATH);
                     IMAGE_FILE_PATH=null;
-=======
-        alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Show toast message when no text is entered
-                if (TextUtils.isEmpty(title_et.getText().toString())) {
-                    Toast.makeText(MainActivity.this, "Enter title!", Toast.LENGTH_SHORT).show();
-                    return;
-                }    if (TextUtils.isEmpty(desc_et.getText().toString())) {
-                    Toast.makeText(MainActivity.this, "Enter Description!", Toast.LENGTH_SHORT).show();
-                    return;
-                }    if (TextUtils.isEmpty(category_et.getText().toString())) {
-                    Toast.makeText(MainActivity.this, "Enter category!", Toast.LENGTH_SHORT).show();
-                    return;
-                } else {
-                    alertDialog.dismiss();
-                }
-
-                // check if user updating note
-                if (shouldUpdate && note != null) {
-                    // update note by it's id
-                    updateNote(title_et.getText().toString(),desc_et.getText().toString(),category_et.getText().toString(), position);
-                } else {
-                    // create new note
-                    if (NOTE_TYPE.equals("text"))
-                    {
-                        createNote(title_et.getText().toString(),desc_et.getText().toString(),category_et.getText().toString());
-
-                    }else
-                    {
-
-                        createImageNote(title_et.getText().toString(),desc_et.getText().toString(),category_et.getText().toString(),IMAGE_FILE_PATH);
-                        IMAGE_FILE_PATH=null;
-                    }
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
                 }
             }
         });
@@ -680,22 +483,11 @@ public class MainActivity extends AppCompatActivity  {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
-<<<<<<< HEAD
         if (item.getItemId() == R.id.filter_menu) {
             sortNotes();
             return true;
         }
         return super.onOptionsItemSelected(item);
-=======
-        switch (item.getItemId()) {
-            case R.id.filter_menu:
-                sortNotes();
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
-        }
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
     }
 
     private void searchNotes(String keyword) {
@@ -726,7 +518,6 @@ public class MainActivity extends AppCompatActivity  {
 
 
 
-<<<<<<< HEAD
         rg.setOnCheckedChangeListener((radioGroup, checkedId) -> {
             if (checkedId == R.id.title_rb) {
 
@@ -746,46 +537,6 @@ public class MainActivity extends AppCompatActivity  {
         });
 
         cancel.setOnClickListener(view -> dialog.dismiss());
-=======
-        rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
-                if (checkedId == R.id.title_rb) {
-
-                    Collections.sort(notesList, new Comparator<Note>() {
-                        @Override
-                        public int compare(Note note, Note t1) {
-                            return note.getTitle().compareTo(t1.getTitle());
-                        }
-
-
-
-
-
-                    });
-                    mAdapter.notifyDataSetChanged();
-                    SORT_VALUE=1;
-
-                    dialog.dismiss();
-                } else {
-
-                    SORT_VALUE=0;
-                    finish();
-                    startActivity(getIntent());
-                    dialog.dismiss();
-                }
-
-            }
-        });
-
-        cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-               dialog.dismiss();
-            }
-        });
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
 
         dialog.show();
     }
@@ -837,7 +588,6 @@ public class MainActivity extends AppCompatActivity  {
                     }
                 }
             }
-<<<<<<< HEAD
             if (requestCode == AUDIO_REQ_CODE) {
                 // Get the url of the image from data
                 Uri selectedAudioUri = data.getData();
@@ -853,8 +603,6 @@ public class MainActivity extends AppCompatActivity  {
                     }
                 }
             }
-=======
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
         }
     }
     private void createImageNote(String title,String desc,String category,String image) {
@@ -863,11 +611,7 @@ public class MainActivity extends AppCompatActivity  {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.PNG, 0, byteArrayOutputStream);
         byte[] bytesImage = byteArrayOutputStream.toByteArray();
-<<<<<<< HEAD
         long id = db.insertImageNote(title,desc,category,image,latitude,longitude, AUDIO_FILE_PATH);
-=======
-        long id = db.insertImageNote(title,desc,category,image,latitude,longitude);
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
         Note n = db.getNote(id);
 
         if (n != null) {
@@ -890,7 +634,6 @@ public class MainActivity extends AppCompatActivity  {
         startActivityForResult(Intent.createChooser(i, "Select Picture"), IMAGE_REQ_CODE);
     }
 
-<<<<<<< HEAD
     void audioChooser() {
 
         // create an instance of the
@@ -904,8 +647,6 @@ public class MainActivity extends AppCompatActivity  {
         startActivityForResult(Intent.createChooser(i, "Select Picture"), AUDIO_REQ_CODE);
     }
 
-=======
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
 
     public String getImageFilePath(Uri uri) {
 
@@ -923,7 +664,6 @@ public class MainActivity extends AppCompatActivity  {
         }
         return null;
     }
-<<<<<<< HEAD
 
     public String getAudioFilePath(Uri uri) {
 
@@ -934,8 +674,6 @@ public class MainActivity extends AppCompatActivity  {
         cursor.moveToFirst();
         return cursor.getString(column_index);
     }
-=======
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
     private String getRealPathFromURI(Context context, Uri contentUri) {
         Cursor cursor = null;
         try {

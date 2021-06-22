@@ -15,11 +15,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
         android:text="@string/title"
-=======
-        android:text="Title"
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
         android:textColor="@color/colorPrimary"
         android:textSize="15sp"
         />
@@ -43,11 +39,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
         android:text="@string/description"
-=======
-        android:text="Description"
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
         android:textColor="@color/colorPrimary"
         android:textSize="15sp"
         android:layout_marginTop="20dp"
@@ -69,11 +61,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
         android:text="@string/category"
-=======
-        android:text="Category"
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
         android:textColor="@color/colorPrimary"
         android:textSize="15sp"
         android:layout_marginTop="20dp"
@@ -95,17 +83,12 @@
         android:layout_height="180dp"
         android:visibility="gone"
         android:layout_margin="@dimen/dimen_10"
-<<<<<<< HEAD
         android:contentDescription="@string/todo" />
-=======
-        />
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
 
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
         android:text="@string/see_on_map" />
 
     <Button
@@ -120,9 +103,6 @@
         android:layout_height="wrap_content"
         android:text="@string/stop_audio"
         android:visibility="gone" />
-=======
-        android:text="See on Map" />
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
 
 </LinearLayout>
 </LinearLayout>

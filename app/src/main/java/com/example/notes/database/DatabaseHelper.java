@@ -43,11 +43,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     //Insert text type
-<<<<<<< HEAD
     public long insertNote(String note,String desc,String category,String latitude,String longitude, String audio) {
-=======
-    public long insertNote(String note,String desc,String category,String latitude,String longitude) {
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
         // get writable database as we want to write data
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -60,12 +56,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(Note.COLUMN_TYPE, "text");
         values.put(Note.COLUMN_LATITUDE,latitude);
         values.put(Note.COLUMN_LONGITUDE, longitude);
-<<<<<<< HEAD
         if (audio != null){
             values.put(Note.COLUMN_AUDIO, audio);
         }
-=======
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
 
         // insert row
         long id = db.insert(Note.TABLE_NAME, null, values);
@@ -78,11 +71,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-<<<<<<< HEAD
     public long insertImageNote(String title,String desc,String category,String image,String latitude,String longitude, String audio) {
-=======
-    public long insertImageNote(String title,String desc,String category,String image,String latitude,String longitude) {
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
          SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -93,12 +82,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(Note.COLUMN_TYPE, "image");
         values.put(Note.COLUMN_LATITUDE, latitude);
         values.put(Note.COLUMN_LONGITUDE, longitude);
-<<<<<<< HEAD
         if (audio != null){
             values.put(Note.COLUMN_AUDIO, audio);
         }
-=======
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
 
         // insert row
         long id = db.insert(Note.TABLE_NAME, null, values);
@@ -114,11 +100,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query(Note.TABLE_NAME,
-<<<<<<< HEAD
                 new String[]{Note.COLUMN_ID, Note.COLUMN_TITLE, Note.COLUMN_DESCRIPTION,Note.COLUMN_CATEGORY,Note.COLUMN_TYPE, Note.COLUMN_TIMESTAMP, Note.COLUMN_IMAGE, Note.COLUMN_LATITUDE, Note.COLUMN_LONGITUDE, Note.COLUMN_AUDIO},
-=======
-                new String[]{Note.COLUMN_ID, Note.COLUMN_TITLE, Note.COLUMN_DESCRIPTION,Note.COLUMN_CATEGORY,Note.COLUMN_TYPE, Note.COLUMN_TIMESTAMP, Note.COLUMN_IMAGE, Note.COLUMN_LATITUDE, Note.COLUMN_LONGITUDE},
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
                 Note.COLUMN_ID + "=?",
                 new String[]{String.valueOf(id)}, null, null, null, null);
 
@@ -140,12 +122,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 cursor.getString(cursor.getColumnIndex(Note.COLUMN_TIMESTAMP)),
                 cursor.getString(cursor.getColumnIndex(Note.COLUMN_IMAGE)),
                 cursor.getString(cursor.getColumnIndex(Note.COLUMN_LATITUDE)),
-<<<<<<< HEAD
                 cursor.getString(cursor.getColumnIndex(Note.COLUMN_LONGITUDE)),
                 cursor.getString(cursor.getColumnIndex(Note.COLUMN_AUDIO)));
-=======
-                cursor.getString(cursor.getColumnIndex(Note.COLUMN_LONGITUDE)));
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
 
         // close the db connection
         cursor.close();
@@ -179,12 +157,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 }
                 note.setLatitude(cursor.getString(cursor.getColumnIndex(Note.COLUMN_LATITUDE)));
                 note.setLongitude(cursor.getString(cursor.getColumnIndex(Note.COLUMN_LONGITUDE)));
-<<<<<<< HEAD
                 if (cursor.getBlob(cursor.getColumnIndex(Note.COLUMN_AUDIO))!=null) {
                     note.setAudio(cursor.getString(cursor.getColumnIndex(Note.COLUMN_AUDIO)));
                 }
-=======
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
                 notes.add(note);
             } while (cursor.moveToNext());
         }
@@ -209,11 +184,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return count;
     }
 
-<<<<<<< HEAD
     public void updateNote(Note note) {
-=======
-    public int updateNote(Note note) {
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -222,11 +193,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(Note.COLUMN_CATEGORY, note.getCategory());
 
         // updating row
-<<<<<<< HEAD
         db.update(Note.TABLE_NAME, values, Note.COLUMN_ID + " = ?",
-=======
-        return db.update(Note.TABLE_NAME, values, Note.COLUMN_ID + " = ?",
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
                 new String[]{String.valueOf(note.getId())});
     }
 
@@ -243,11 +210,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             SQLiteDatabase sqLiteDatabase = getReadableDatabase();
             Cursor cursor = sqLiteDatabase.rawQuery("select * from " + Note.TABLE_NAME + " where " + Note.COLUMN_TITLE + " or " + Note.COLUMN_DESCRIPTION + " like ?", new String[] { "%" + keyword + "%" });
             if (cursor.moveToFirst()) {
-<<<<<<< HEAD
                 contacts = new ArrayList<>();
-=======
-                contacts = new ArrayList<Note>();
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
                 do {
                     Note contact = new Note();
                     contact.setId(cursor.getInt(0));

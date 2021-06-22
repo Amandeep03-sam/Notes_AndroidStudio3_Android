@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-<<<<<<< HEAD
     xmlns:tools="http://schemas.android.com/tools"
-=======
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -26,11 +23,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
         android:text="@string/title"
-=======
-        android:text="Title"
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
         android:textColor="@color/colorPrimary"
         android:textSize="15sp"
         />
@@ -47,34 +40,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-<<<<<<< HEAD
             android:hint="@string/enter_title"
-=======
-            android:hint="Enter Title"
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
             android:inputType="text"
             android:lines="4"
 
             android:backgroundTint="@android:color/transparent"
             android:textColor="@color/black"
             android:textColorHint="@color/hint_enter_note"
-<<<<<<< HEAD
             android:textSize="@dimen/input_new_note"
             android:autofillHints="" />
-=======
-            android:textSize="@dimen/input_new_note" />
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
 
     </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
         android:text="@string/description"
-=======
-        android:text="Description"
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
         android:textColor="@color/colorPrimary"
         android:textSize="15sp"
         android:layout_marginTop="20dp"
@@ -92,34 +73,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
          android:gravity="center"
-<<<<<<< HEAD
         android:hint="@string/enter_description"
-=======
-        android:hint="Enter description"
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
         android:inputType="textCapSentences|textMultiLine"
         android:lines="4"
         android:backgroundTint="@android:color/transparent"
         android:layout_gravity="center"
         android:textColor="@color/black"
         android:textColorHint="@color/hint_enter_note"
-<<<<<<< HEAD
         android:textSize="@dimen/input_new_note"
         android:autofillHints="" />
-=======
-        android:textSize="@dimen/input_new_note" />
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
     </LinearLayout>
 
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
         android:text="@string/category"
-=======
-        android:text="Category"
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
         android:textColor="@color/colorPrimary"
         android:textSize="15sp"
         android:layout_marginTop="20dp"
@@ -137,22 +106,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-<<<<<<< HEAD
         android:hint="@string/enter_category"
-=======
-        android:hint="Enter Category"
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
         android:inputType="text"
         android:lines="4"
         android:backgroundTint="@android:color/transparent"
         android:textColor="@color/black"
         android:textColorHint="@color/hint_enter_note"
-<<<<<<< HEAD
         android:textSize="@dimen/input_new_note"
         android:autofillHints="" />
-=======
-        android:textSize="@dimen/input_new_note" />
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
     </LinearLayout>
 
     <ImageView
@@ -161,7 +122,6 @@
         android:layout_height="60dp"
         android:visibility="gone"
         android:layout_margin="@dimen/dimen_10"
-<<<<<<< HEAD
         android:contentDescription="@string/todo" />
 
     <TextView
@@ -170,18 +130,11 @@
         android:layout_height="wrap_content"
         android:text="@string/audio_attached"
         android:visibility="gone" />
-=======
-        />
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-<<<<<<< HEAD
-=======
-        android:layout_below="@+id/imageView"
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
         android:layout_margin="@dimen/dimen_10"
 
         >
@@ -191,11 +144,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-<<<<<<< HEAD
             android:text="@string/camera"
-=======
-            android:text="Camera"
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
             />
 
         <Button
@@ -203,13 +152,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-<<<<<<< HEAD
             android:text="@string/audio"
             android:layout_marginStart="@dimen/dimen_10"
-=======
-            android:text="Audio"
-            android:layout_marginLeft="@dimen/dimen_10"
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
             />
 
 

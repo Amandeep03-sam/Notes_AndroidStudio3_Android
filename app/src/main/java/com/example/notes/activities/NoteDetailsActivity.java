@@ -5,10 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-<<<<<<< HEAD
 import android.media.MediaPlayer;
-=======
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -32,7 +29,6 @@ public class NoteDetailsActivity extends AppCompatActivity {
         desc_tv=findViewById(R.id.desc_tv);
         category_tv=findViewById(R.id.category_tv);
         Button openMap = findViewById(R.id.button);
-<<<<<<< HEAD
         Button playAudio = findViewById(R.id.button2);
         Button pauseAudio = findViewById(R.id.button3);
         Intent intent= getIntent();
@@ -75,23 +71,6 @@ public class NoteDetailsActivity extends AppCompatActivity {
                 startActivity(intent1);
             }
 
-=======
-        Intent intent= getIntent();
-        Note note= (Note) intent.getSerializableExtra("data");
-
-        openMap.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                if (note.getLatitude() != null && note.getLongitude() != null) {
-                    // do your stuff..
-                    Intent intent= new Intent(NoteDetailsActivity.this,MarkerActivity.class);
-                    intent.putExtra("data",note);
-                    startActivity(intent);
-                }
-
-            }
->>>>>>> f6f1d5bb6bc7d8a233865e3251b13c9565be6714
         });
 
         if (note.getType().contentEquals("text")) {
